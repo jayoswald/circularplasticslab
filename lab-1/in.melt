@@ -1,0 +1,27 @@
+# 3d Lennard-Jones melt
+units	     lj
+atom_style   atomic
+
+lattice      fcc 1
+region	      box block 0 10 0 10 0 10
+create_box    1 box
+create_atoms  1 box
+mass	      1 1.0
+
+pair_style	lj/cut 2.5
+pair_coeff	1 1 1.0 1.0 2.5
+neighbor        0.3 bin
+neigh_modify    every 20 delay 0 check no
+
+velocity	all create 0.1 87287 loop geom
+fix		1 all npt temp 0.1 2.0 0.5 iso 1.0 1.0 0.5
+
+dump       2 all image 500 image.*.jpg type type &
+            axes yes 0.8 0.02 view 60 -30
+dump_modify    2 pad 3
+
+
+
+thermo_style custom step time temp etotal vol
+thermo     50
+run		   5000
