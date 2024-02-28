@@ -20,7 +20,7 @@ fix 1 all nve/limit 0.1
 fix 2 all temp/rescale 1 1.0 1.0 1.0 1.0
 
 dump 1 all custom 50 dump.nvelimit.lammpstrj id type x y z
-run 100
+run 1000
 
 unfix 1
 unfix 2
