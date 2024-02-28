@@ -30,7 +30,7 @@ class lammps_system:
             row.sort()
         return bt
 
-    def write_lmpdata(self, path):
+    def write_lammps_data(self, path):
         ''' Writes the system to a LAMMPS data file. '''
         fid = open(path, 'w')
         fid.write('LAMMPS polymer data file\n\n')
@@ -65,7 +65,7 @@ def construct_random_chains(**kwargs):
 
     n = molecules*molecule_size
     v0 = 4.0/3.0*pi
-    Lx = (n / v0)**(1.0/3.0)
+    Lx = (5.0 * n / v0)**(1.0/3.0)
     Lx = kwargs.get('box_length_x', Lx)
     Ly = kwargs.get('box_length_y', Lx)
     Lz = kwargs.get('box_length_z', Lx)

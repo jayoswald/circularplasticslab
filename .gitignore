@@ -1,0 +1,13 @@
+vmdscene.*
+*.png
+*.jpg
+log.lammps
+
+.ipynb_checkpoints
+__pycache__
+
+Untitled*.ipynb
+
+lab-2/polymer.lammps
+lab-2/vmd-script.vmd
+*.lammpstrj
