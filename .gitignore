@@ -1,6 +1,8 @@
 vmdscene.*
 *.png
 *.jpg
+*.tga
+*.mp4
 log.lammps
 
 .ipynb_checkpoints
@@ -11,3 +13,6 @@ Untitled*.ipynb
 lab-2/polymer.lammps
 lab-2/vmd-script.vmd
 *.lammpstrj
+
+lab-4/polymer.lammps
+

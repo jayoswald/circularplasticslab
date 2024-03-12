@@ -88,8 +88,8 @@ def construct_random_chains(**kwargs):
                 t = system.atom_coord[-1] - system.atom_coord[-2]
                 t /= numpy.linalg.norm(t)
                 n = random_perpendicular(t)
-                # TODO - sample angle q
-                R = rotation_about_axis(n, 2.0*pi/3.0)
+                q = numpy.random.normal(loc=150.0, scale=10.0) * pi/180.0
+                R = rotation_about_axis(n, q)
                 x = system.atom_coord[-1] + R@t*bond_length
             
             system.atom_coord.append(x)
